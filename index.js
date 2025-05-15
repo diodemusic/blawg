@@ -23,6 +23,23 @@ db.once("open", () => {
     console.log("Connected to MongoDB");
 });
 
+const postSchema = new mongoose.Schema({
+    title: {
+        type: String
+    },
+    content: {
+        type: String
+    },
+    category: {
+        type: String
+    },
+    tags: {
+        type: [String]
+    }
+});
+
+const Post = mongoose.model("Post", postSchema);
+
 app.get("/", (req, res) => {
     res.send("Hello world!");
 });
