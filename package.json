@@ -2,10 +2,10 @@
   "name": "blawg",
   "version": "1.0.0",
   "description": "My blog.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js" 
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,8 @@
   },
   "homepage": "https://github.com/diodemusic/blawg#readme",
   "dependencies": {
-    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.14.3"
-  },
-  "type": "module"
+  }
 }
