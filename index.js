@@ -1,9 +1,11 @@
+require("dotenv").config();
 const app = require("express")();
-const PORT = 8080;
 
-app.get("/api/", (req, res) => {
+const PORT = process.env.PORT;
+
+app.get("/api/health", (req, res) => {
     res.status(200).send({
-        message: "Hello world"
+        message: "LGTM 👍"
     });
 });
 
