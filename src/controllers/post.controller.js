@@ -35,8 +35,22 @@ async function readPost(req, res) {
     }
 }
 
+async function deletePost(req, res) {
+    try {
+        const post = await Post.deleteOne({ _id: req.params.id });
+
+        res.status(200).send({
+            message: "Post deleted",
+            documentsDeletedCount: post.deletedCount
+        });
+    } catch (error) {
+        res.status(400).send({ message: error.message });
+    }
+}
+
 module.exports = {
     createPost,
     readPosts,
-    readPost
+    readPost,
+    deletePost
 };
