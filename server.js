@@ -6,7 +6,7 @@ const app = express();
 const healthRoutes = require("./src/routes/health.route");
 const postRoutes = require("./src/routes/post.route")
 const mongoose = require("mongoose");
-var morgan = require("morgan");
+const morgan = require("morgan");
 
 mongoose.connect(MONGODB_CONNECTION_STRING)
     .then(() => console.log("connected to mongodb"));
