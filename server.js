@@ -3,8 +3,8 @@ const PORT = process.env.PORT;
 const MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING;
 const express = require("express");
 const app = express();
-const health = require("./src/routes/health.route");
-const createPost = require("./src/routes/post.route")
+const healthRoutes = require("./src/routes/health.route");
+const postRoutes = require("./src/routes/post.route")
 const mongoose = require("mongoose");
 var morgan = require("morgan");
 
@@ -16,8 +16,8 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // mount routers
-app.use("/api/health/", health);
-app.use("/api/post/", createPost)
+app.use("/api/health/", healthRoutes);
+app.use("/api/post/", postRoutes);
 
 app.listen(PORT, () => {
     console.log(`It's alive! localhost:${PORT}`);
