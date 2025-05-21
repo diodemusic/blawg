@@ -20,7 +20,7 @@ async function readPosts(req, res) {
             return res.status(200).send({ posts });
         }
 
-        const posts = await Post.find({ "title": { "$regex": req.query.term } })
+        const posts = await Post.find({ "title": { "$regex": req.query.term } });
 
         res.status(200).send({ posts });
     } catch (error) {
