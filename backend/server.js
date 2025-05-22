@@ -4,6 +4,7 @@ const healthRoutes = require("./src/routes/health.route");
 const postRoutes = require("./src/routes/post.route")
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const PORT = process.env.PORT;
 const MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING;
@@ -14,6 +15,7 @@ mongoose.connect(MONGODB_CONNECTION_STRING)
     .then(() => console.log("connected to mongodb"));
 
 // middleware
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
