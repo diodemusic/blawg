@@ -1,12 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
-import Post from './components/Post.jsx';
-// import * as ReactDOM from 'react-dom';
+import PostList from "./components/PostList";
 
 function App() {
-  // const root = ReactDOM.createRoot(document.getElementById('root'));
-
-  return (<Post title="first post" content="this is a test post yippie" />)
+    return (
+        <div>
+            <PostList />
+        </div>
+    );
 }
 
 export default App;
