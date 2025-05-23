@@ -12,7 +12,7 @@ export default function PostList() {
                 setLoading(false);
             })
             .catch(error => {
-                console.error(`Error fetching post: ${error}`);
+                console.error(`Error fetching post: ${error.message}`);
                 setLoading(false);
             });
     }, []);
